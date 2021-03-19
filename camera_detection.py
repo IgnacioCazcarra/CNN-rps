@@ -3,7 +3,7 @@ import numpy as np
 import tensorflow as tf
 
 IMG_SIZE = 70
-FONT = cv2.FONT_HERSHEY_SIMPLEX
+FONT = cv2.FONT_HERSHEY_DUPLEX
 
 
 def get_rps_prediction(arr):
@@ -14,11 +14,11 @@ def get_rps_prediction(arr):
             m = arr[0][i]
             midx = i
     if midx == 0:
-        return 'rock'
+        return 'ROCK'
     elif midx == 1:
-        return 'paper'
+        return 'PAPER'
     else:
-        return 'scissors'
+        return 'SCISSORS'
 
 
 def scale(path):
@@ -48,7 +48,7 @@ while(1):
         cv2.imwrite("ROI.png",ROI)
         img = scale('ROI.png')
         prediction = model.predict([img])
-        cv2.putText(frame,f'{get_rps_prediction(prediction)}',(50,50), FONT, 1,(255,255,255), 2, cv2.LINE_4)
+        cv2.putText(frame,f'{get_rps_prediction(prediction)}',(50,50), FONT, 2 ,(255,255,255), 2, cv2.LINE_8)
         cv2.imshow('curFrame', frame) 
 
 
