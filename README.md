@@ -4,5 +4,5 @@
 #### All credits to 'drgfreeman' for the provided dataset.
 
 Instructions:
--Run camera_detection.py
--Put your hand in the camera and check that only the hand is seen in the ROI camera
+- Run camera_detection.py
+- Put your hand in the camera and check that only the hand is seen in the ROI camera
